@@ -10,7 +10,7 @@
     "test": "tsx --test tests/analyze.test.ts tests/http.test.ts tests/revision.test.ts tests/provider.test.ts"
   },
   "dependencies": {
-    "next": "15.5.4",
+    "next": "15.5.28",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "zod": "^3.25.76"
