@@ -39,13 +39,6 @@ npm run dev
 
 Open http://localhost:3000.
 
-## Gemini environment configuration
-
-```env
-OPENAI_API_KEY=YOUR_GEMINI_API_KEY
-OPENAI_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
-OPENAI_MODEL=gemini-3.8-flash
-```
 
 Equivalent `GEMINI_*` variables are also supported. If no key is set, the app
 runs in clearly-labeled Demo Mode and never claims a live AI call. A present but
