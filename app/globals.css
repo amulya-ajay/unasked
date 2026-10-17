@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #08080a;
+  --color-canvas-2: #0e0e11;
+  --color-panel: #121216;
+  --color-panel-2: #17171c;
+  --color-line: #26262c;
+  --color-line-soft: #1c1c22;
+  --color-ink: #f5f2ec;
+  --color-muted: #9d9a94;
+  --color-faint: #6d6a66;
+  --color-ember: #ff5a1f;
+  --color-ember-soft: #ffb08a;
+  --color-crit: #ff5245;
+  --color-high: #ff9333;
+  --color-med: #e8c558;
+  --color-low: #5fd3a0;
+
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-bg {
+  background-image:
+    radial-gradient(900px 500px at 12% -8%, rgba(255, 90, 31, 0.16), transparent 62%),
+    radial-gradient(700px 420px at 92% 4%, rgba(95, 211, 160, 0.07), transparent 60%),
+    linear-gradient(180deg, #08080a 0%, #0b0b0f 55%, #08080a 100%);
+}
+
+.hairline {
+  background-image: linear-gradient(90deg, transparent, var(--color-line), transparent);
+}
+
+::selection {
+  background: rgba(255, 90, 31, 0.32);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-ember);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+textarea {
+  field-sizing: content;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.35s ease both;
+}
+
+@keyframes sheen {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(320%);
+  }
+}
+
+.sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 30%;
+  background: linear-gradient(90deg, transparent, rgba(255, 90, 31, 0.55), transparent);
+  animation: sheen 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .sheen::after {
+    animation: none;
+  }
+}

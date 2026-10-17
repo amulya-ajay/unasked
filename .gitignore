@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment files (never commit secrets)
+.env
+.env.local
+.env*.local
+
+# Explicitly allow example env files (placeholders only)
+!.env.example
+!.env.local.example
+
+# Temporary integration-test artifacts
+_*.mts
+_*.mjs
+_*.ts.bak
+.smoke-server.log
+
+# TypeScript build info
+*.tsbuildinfo
+next-env.d.ts
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Vercel
+.vercel
